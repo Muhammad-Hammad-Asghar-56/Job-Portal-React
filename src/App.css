@@ -1,0 +1,36 @@
+.App{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #5c5b5b !important ;
+}
+.imageContainer{
+  /* background-color: #f8f7fa !important; */
+  background-color: #424242 !important;
+}
+
+.flexRow{
+  display: flex;
+  flex-direction: row;
+}
+.flexCol{
+  display: flex;
+  flex-direction: column;
+}
+.justify-content-center{
+  justify-content: center;
+}
+.align-Items-center{
+  align-items: center;
+}
+.w-full{
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+.justifybetween{
+  justify-content: space-between;
+}

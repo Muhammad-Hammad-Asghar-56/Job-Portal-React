@@ -1,0 +1,38 @@
+.AuthPage {
+    padding: 2rem;
+    height: 100%;
+}
+
+.ImageContainer {
+    background-color: #f8f7fa;
+    width: 65%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.Auth {
+    padding: 0px 0px 1rem 20px;
+    width: 35%;
+    height: 100%;
+    background-color: white;
+}
+
+/* Add styles for the "or" text and the cutting line */
+.or-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 16px 0;
+}
+
+.or-divider .line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.password-field .or-divider .or-text {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #777;
+}
