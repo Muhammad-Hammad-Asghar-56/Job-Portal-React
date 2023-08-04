@@ -6,6 +6,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import signUpImg from '../Assets/signUp.png'
+import { signInWithGoogle,signInWithFacebook } from '../Firebase/FirebaseAuthHandler';
+
 
 const SignUp = () => {
     const [data, setData] = useState()
@@ -14,6 +16,12 @@ const SignUp = () => {
     }
     const setPassword = (pValue) => {
         setData({ ...data, ['password']: pValue })
+    }
+    const handleGoogleAuth=()=>{
+        console.log(signInWithGoogle())
+    }
+    const handleFaceBookAuth=()=>{
+        console.log(signInWithFacebook())
     }
     useEffect(() => { console.log(data) }, [data])
     return (
@@ -51,10 +59,10 @@ const SignUp = () => {
                     <span style={{ marginRight: '10px' }}>Already have an account? </span> <a href='#'>Sign in instead</a>
                 </div>
                 <div className='flexRow justify-content-center' style={{ gap: '1rem' }}>
-                    <div style={{ background: "#e1e6f2", padding: "1rem" }}>
+                    <div onClick={handleFaceBookAuth} style={{ background: "#e1e6f2", padding: "1rem" }}>
                         <FacebookIcon color="primary" />
                     </div>
-                    <div style={{ background: "#f9e2df", padding: "1rem" }}>
+                    <div onClick={handleGoogleAuth} style={{ background: "#f9e2df", padding: "1rem" }}>
                         <GoogleIcon sx={{ color: 'red' }} />
                     </div>
                     <div style={{ background: "#e1e6f2", padding: "1rem" }}>
