@@ -6,7 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import signInImg from '../Assets/logIn.png'
-import { signInWithGoogle,signInWithFacebook } from '../Firebase/FirebaseAuthHandler';
+import { signInWithGoogle,signInWithFacebook ,signInWithTwitter} from '../Firebase/FirebaseAuthHandler';
 
 
 const SignIn = () => {
@@ -24,6 +24,9 @@ const SignIn = () => {
     }
     const handleFaceBookAuth=()=>{
         console.log(signInWithFacebook())
+    }
+    const handleTwitterAuth=()=>{
+        console.log(signInWithTwitter())
     }
     return (
         <div className='AuthPage flexRow'>
@@ -68,7 +71,7 @@ const SignIn = () => {
                     <div onClick={handleGoogleAuth} style={{ background: "#f9e2df", padding: "1rem" }}>
                         <GoogleIcon sx={{ color: 'red' }} />
                     </div>
-                    <div style={{ background: "#e1e6f2", padding: "1rem" }}>
+                    <div onClick={handleTwitterAuth} style={{ background: "#e1e6f2", padding: "1rem" }}>
                         <TwitterIcon sx={{ color: 'blue' }} />
                     </div>
                 </div>

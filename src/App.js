@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Routes> {/* Wrap your Routes */}
+        <Routes>
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/dashboard" element={<DashBoard />} />

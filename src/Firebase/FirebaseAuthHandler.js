@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import app from "./firebaseConfig"
-import { getAuth, GoogleAuthProvider,FacebookAuthProvider, signInWithRedirect,signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider,FacebookAuthProvider,TwitterAuthProvider, signInWithRedirect,signInWithPopup } from "firebase/auth";
 
 //              Authentication
 const auth=getAuth(app)
@@ -30,6 +30,29 @@ export const signInWithGoogle = async () => {
     }
   };
   
+
+const twitterprovider = new TwitterAuthProvider(); // Create an instance using 'new'
+export const signInWithTwitter = async () => {
+  try {
+    const res = await signInWithPopup(auth, twitterprovider);
+    const name = res.user.displayName;
+    const email = res.user.email;
+
+    localStorage.setItem("FirebaseApplication", JSON.stringify({ "userName": name, "userEmail": email }));
+    return { name, email };
+  } catch (error) {
+    if (error.code === "auth/cancelled-popup-request") {
+      // Handle the case where the user canceled the popup
+      console.log("Authentication popup was canceled by the user.");
+    } else {
+      // Handle other authentication errors
+      console.error("Error during Google authentication:", error);
+    }
+    return null;
+  }
+};
+
+
 
 const Facebookprovider = new FacebookAuthProvider(); // Create an instance using 'new'
 export const signInWithFacebook = async () => {

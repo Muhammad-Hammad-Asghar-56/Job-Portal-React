@@ -32,9 +32,9 @@ const Sidebar = (props) => {
 
     return (
         <div className={`sidebar ${classes} flexCol justifybetween`} style={style}>
-            <div style={{marginLeft:'20px'}}>
+            <div style={{ marginLeft: '20px' }}>
                 <div className='flexRow align-Items-center'>
-                    <img src="" alt="Logo" style={{marginRight:'20px'}}/>
+                    <img src="" alt="Logo" style={{ marginRight: '20px' }} />
                     <h4>Company</h4>
                 </div>
                 <ul className="menu">
@@ -115,15 +115,21 @@ const Sidebar = (props) => {
                         Help                        </div></li>
                 </ul>
             </div>
-            <div style={{margin:'0px 20px 10px 20px',padding:'10px 0px 0px 0px',borderTop: '1px solid #424242'}}>
-                <div className='flexRow align-Items-center' style={{ gap: "10px",marginBottom:'20px' }}>
-                    <SettingsIcon color='dark' />
-                    Settings
-                </div>
-                <div className='flexRow align-Items-center' style={{ gap: "10px" }}>
-                    <AttachmentIcon color='dark' />
-                    Licsense
-                </div>
+            <div style={{ margin: '0px 20px 10px 20px', padding: '10px 0px 0px 0px', borderTop: '1px solid #424242' }}>
+                <ul className="menu">
+                    <li className={`menu-item`}>
+                        <div className='flexRow align-Items-center' style={{ gap: "10px", marginBottom: '20px' }}>
+                            <SettingsIcon color='dark' />
+                            Settings
+                        </div>
+                    </li>
+                    <li className={`menu-item`}>
+                        <div className='flexRow align-Items-center' style={{ gap: "10px" }}>
+                            <AttachmentIcon color='dark' />
+                            Licsense
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     );
